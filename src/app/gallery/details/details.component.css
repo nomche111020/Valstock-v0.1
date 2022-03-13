@@ -1,0 +1,12 @@
+.details-row {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn-group button{
+    margin: 30px;
+}
+
+.image img{
+    max-width: 400px;
+}

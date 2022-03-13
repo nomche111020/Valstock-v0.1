@@ -18,6 +18,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "@fontsource/lexend-deca": "^4.5.5",
     "@ngrx/store": "^13.0.2",
     "file-saver": "^2.0.5",
     "rxjs": "~7.5.0",

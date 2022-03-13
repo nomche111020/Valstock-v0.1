@@ -20,7 +20,7 @@ export class GalleryComponent implements OnInit {
   @ViewChild('modal', {static: false}) modal!: ModalComponent
 
   ngOnInit(): void {
-    this.imageService.getImages(1,9).subscribe(data => {
+    this.imageService.getImages(1,30).subscribe(data => {
       if(data){
         this.images = data;
       }

@@ -1,7 +1,15 @@
-<p>album works!</p>
-
-<div>
-    <div *ngFor="let image of album.images">
-        <div>{{image.author}}</div>
+<div class="container">
+    <div class="album-row">
+        <div class="title">
+            <p>{{ album.name }}</p>
+        </div>
+        <div  class="pin-container container">
+            <div *ngFor="let image of album.images" class="pin-item">
+                <img class="image" [src]="image.download_url" />
+                <div class="btn-hover">          
+                  <div class="btn-text">Remove</div>
+                </div>
+            </div>    
+        </div>
     </div>
 </div>

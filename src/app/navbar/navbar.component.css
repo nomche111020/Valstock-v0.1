@@ -1,4 +1,4 @@
-nav {
+header {
     /* position: absolute;
     top: 0;
     left: 0;
@@ -12,11 +12,48 @@ nav {
     opacity: 1;
 }
 
-nav a{
+header a{
+    margin: auto;
+}
+
+.nav-wrap {
+    align-items: center;
+    display: flex;
+}
+
+.nav-logo {
     margin: auto;
 }
 
 .logo {
     width: 127px;
     height: 25px;
+    background: transparent;
 }
+
+
+@media screen and (max-width: 1199px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        max-width: 450px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .container {
+        max-width: 300px;
+    }
+}
+
+

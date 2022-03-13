@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ImageService } from 'src/app/services/image.service';
 import { saveAs } from 'file-saver';
 import { Image } from '../../models';
@@ -14,7 +14,7 @@ export class DetailsComponent implements OnInit {
   public imageId!: string;
   public image: Image | undefined;
 
-  constructor(private route: ActivatedRoute, private imageService: ImageService) { }
+  constructor(private route: ActivatedRoute, private imageService: ImageService, private router: Router) { }
 
   ngOnInit(): void {
     this.imageId = this.route.snapshot.params['id'];
@@ -26,6 +26,10 @@ export class DetailsComponent implements OnInit {
         }
       });
     }
+  }
+
+  goBack() : void {
+    this.router.navigate(["gallery"]);
   }
 
   download() : void{

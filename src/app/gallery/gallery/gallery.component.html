@@ -1,8 +1,5 @@
 
-
-<p>gallery works!</p>
-
-<div  class="pin-container">
+<div  class="pin-container container">
     <div *ngFor="let image of images" class="pin-item">
         <img routerLink="details/{{image.id}}" class="image" [src]="image.download_url" />
         <div class="btn-hover">          

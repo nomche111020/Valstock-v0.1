@@ -1,0 +1,14 @@
+.album-row {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.title p{
+    font-size: 32px;
+}
+
+.img-row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 30px;
+}

@@ -1,8 +1,15 @@
-<h1>details works</h1>
-<div>
-    <button>Add to album</button>
-    <button (click)="download()">Download</button>
-    <div *ngIf="image">
-        <img [src]="image.download_url" />
+
+<div class="container">
+    <div class="details-row">
+        <div class="btn-group">
+            <button class="btn-white">Add to album</button>
+            <button class="btn-black" (click)="download()">Download</button>
+        </div>
+        <div class="image" *ngIf="image">
+            <img [src]="image.download_url" />
+        </div>
+        <div class="image-details">
+            <button class="btn-white m-top30" (click)="goBack()">Go back</button>
+        </div>
     </div>
 </div>
