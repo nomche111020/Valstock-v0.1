@@ -3,13 +3,17 @@
         <div class="title">
             <p>{{ album.name }}</p>
         </div>
-        <div  class="pin-container container">
+        <div  class="pin-album container">
             <div *ngFor="let image of album.images" class="pin-item">
                 <img class="image" [src]="image.download_url" />
-                <div class="btn-hover">          
+                <!-- <div class="btn-hover">          
                   <div class="btn-text">Remove</div>
-                </div>
+                </div> -->
             </div>    
+        </div>
+        <div class="album-footer">
+            <button class="btn-white m-top30" (click)="goBack()">Go back</button>
+            <button class="btn-black m-top30">Save</button>
         </div>
     </div>
 </div>

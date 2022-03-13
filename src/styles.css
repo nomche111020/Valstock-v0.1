@@ -23,6 +23,7 @@ body {
     color: black;
     background-color: white;
     border: 2px solid black;
+    min-width: 140px;
     height: 30px;
     font-family: "Lexend Deca";
     text-transform: uppercase;
@@ -30,11 +31,16 @@ body {
     font-weight: 800;
 }
 
+.btn-white:hover{
+    background-color: black;
+    color: white;
+}
+
 .btn-black {
     background-color: black;
     color: white;
     border: 2px solid black;
-    width: 140px;
+    min-width: 140px;
     height: 30px;
     font-family: "Lexend Deca";
     text-transform: uppercase;
@@ -60,8 +66,44 @@ body {
     text-align: center;
     list-style: none;
     padding: 0;
+    cursor: pointer;
+
+}
+
+.dropdown-list li:hover {
+    color: black;
 }
 
 .m-top30 {
     margin-top: 30px;
+}
+
+
+
+@media screen and (max-width: 1199px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: 800px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        max-width: 550px;
+    }
+
+    .pin-album{
+
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .container {
+        max-width: 300px;
+    }
 }

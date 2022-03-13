@@ -32,28 +32,6 @@ header a{
 }
 
 
-@media screen and (max-width: 1199px) {
-    .container {
-        max-width: 1000px;
-    }
-}
 
-@media screen and (max-width: 1024px) {
-    .container {
-        max-width: 800px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .container {
-        max-width: 450px;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .container {
-        max-width: 300px;
-    }
-}
 
 

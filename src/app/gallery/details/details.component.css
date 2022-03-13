@@ -8,5 +8,9 @@
 }
 
 .image img{
-    max-width: 400px;
+    max-width: 480px;
+}
+
+.image-details {
+    margin-bottom: 60px;
 }

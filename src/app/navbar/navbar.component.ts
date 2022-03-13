@@ -15,11 +15,16 @@ export class NavbarComponent implements OnInit {
   constructor(private albumService: AlbumService) { }
 
   ngOnInit(): void {
-    this.albums = this.albumService.getAlbums();
+
   }
 
-  openList(): void{
+  openList(): void {
+    this.albums = this.albumService.getAlbums();
     this.list = !this.list;
+  }
+
+  closeList(): void {
+    this.list = false;
   }
 
 }

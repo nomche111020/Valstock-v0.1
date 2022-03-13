@@ -1,11 +1,11 @@
 
 <div class="container">
-    <div class="details-row">
+    <div class="details-row" *ngIf="image">
         <div class="btn-group">
-            <button class="btn-white">Add to album</button>
+            <button class="btn-white" (click)="openModal(image)">Add to album</button>
             <button class="btn-black" (click)="download()">Download</button>
         </div>
-        <div class="image" *ngIf="image">
+        <div class="image">
             <img [src]="image.download_url" />
         </div>
         <div class="image-details">
@@ -13,3 +13,5 @@
         </div>
     </div>
 </div>
+
+<app-modal #modal></app-modal>
