@@ -1,0 +1,12 @@
+<nav class="navbar">
+    <a class="navbar-brand" href="#">
+      <img class="logo" src="assets/sitelogo.png" width="30" height="30" alt="">
+    </a>
+    <label (click)="openList()">My albums</label>
+    <div *ngIf="list" style="display: flex">
+      <ul *ngFor="let album of albums">
+        <li routerLink="gallery/album/{{album.id}}">{{ album.name }}</li>
+      </ul>
+    </div>
+    
+</nav>

@@ -1,0 +1,8 @@
+<h1>details works</h1>
+<div>
+    <button>Add to album</button>
+    <button (click)="download()">Download</button>
+    <div *ngIf="image">
+        <img [src]="image.download_url" />
+    </div>
+</div>

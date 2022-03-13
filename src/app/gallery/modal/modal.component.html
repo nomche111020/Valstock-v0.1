@@ -1,0 +1,30 @@
+<div #myModal class="container">
+    <div class="content">
+        <div class="tab">
+            <ul>
+                <li id="newAlbum" (click)="tabChange('newAlbum')">Create new album</li>
+                <li id="existingAlbum" (click)="tabChange('existingAlbum')">Add to existing</li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="content-value" *ngIf="tabId === 'newAlbum'">
+                    <form [formGroup]="formData" >
+                      <input formControlName="albumName">
+                      <button type="button" type="submit" (click)="save(formData.value)">Save</button>
+                      <button (click)="close()">Cancel</button>
+                    </form>
+                </div>
+                <div class="content-value" *ngIf="tabId === 'existingAlbum'">
+                    <form [formGroup]="formData" >
+                      <ul>
+                          <li *ngFor="let album of albums" (click)="selectAlbum(album.id)"> {{ album.name }}</li>
+                      </ul>
+                      <button type="button" (click)="insertImageToAlbum()" type="submit">Save</button>
+                      <button (click)="close()">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,39 @@
+.pin-container {
+    column-count: 3;
+    column-gap: 30px;
+  }
+  
+  .pin-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .pin-item img {
+    display:block;
+    width: 100%;
+  }
+  
+  .btn-hover {
+    transition: .5s ease;
+    opacity: 0;
+    transform: translate(0%, -100%);
+    -ms-transform: translate(0%, -100%);
+    text-align: center;
+  }
+  
+  .btn-text {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    cursor: pointer;
+  }
+  
+  .pin-item:hover .image {
+    /* opacity: 0.3; */
+  }
+  
+  .pin-item:hover .btn-hover {
+    opacity: 1;
+  }

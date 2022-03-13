@@ -1,0 +1,22 @@
+nav {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    opacity: 1;
+}
+
+nav a{
+    margin: auto;
+}
+
+.logo {
+    width: 127px;
+    height: 25px;
+}
