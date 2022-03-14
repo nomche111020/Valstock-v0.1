@@ -3,6 +3,12 @@
     text-align: center;
 }
 
+.btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .btn-group button{
     margin: 30px;
 }
@@ -13,4 +19,29 @@
 
 .image-details {
     margin-bottom: 60px;
+}
+
+.dropdown-list {
+    margin-top: -20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.dropdown-list ul li{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.author {
+    letter-spacing: 0.64px;
+    color: #000000;
+    opacity: 1;
+    font: normal normal normal 32px/40px Lexend Deca;
+}
+
+.a-title {
+    font: normal normal bold 14px/18px Lexend Deca;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
 }

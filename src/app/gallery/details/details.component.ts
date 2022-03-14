@@ -4,6 +4,7 @@ import { ImageService } from 'src/app/services/image.service';
 import { saveAs } from 'file-saver';
 import { Image } from '../../models';
 import { ModalComponent } from '../modal/modal.component';
+import { NotificationService } from 'src/app/services/notification.service';
 
 @Component({
   selector: 'app-details',
@@ -14,24 +15,25 @@ export class DetailsComponent implements OnInit {
 
   public imageId!: string;
   public image: Image | undefined;
+  public isOpen: boolean = false;
 
-  constructor(private route: ActivatedRoute, private imageService: ImageService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private imageService: ImageService, private router: Router, private notificationService: NotificationService) { }
 
-  @ViewChild('modal', {static: false}) modal!: ModalComponent
+  @ViewChild('modal', { static: false }) modal!: ModalComponent
 
   ngOnInit(): void {
     this.imageId = this.route.snapshot.params['id'];
 
-    if(this.imageId){
+    if (this.imageId) {
       this.imageService.getImageById(this.imageId).subscribe(data => {
-        if(data){        
+        if (data) {
           this.image = data;
         }
       });
     }
   }
 
-  goBack() : void {
+  goBack(): void {
     this.router.navigate(["gallery"]);
   }
 
@@ -39,12 +41,19 @@ export class DetailsComponent implements OnInit {
     this.modal.open(image);
   }
 
-  download() : void{
-    const fileName = Date.now() + '-image.png';
-    fetch(this.image!.download_url).then((res) => {
+  downloadList(): void {
+    this.isOpen = !this.isOpen;
+  }
+
+  download(width: number, height: number): void {
+    const fileName = Date.now() + `-${width}-${height}-image.png`;
+    const imageUrl = 'https://picsum.photos/id/';
+
+    fetch(imageUrl + `${this.imageId}/${width}/${height}`).then((res) => {
       return res.blob();
     }).then((blob) => {
       saveAs(blob, fileName);
+      this.notificationService.showSuccess("This is a success message!", '');
     })
   }
 }

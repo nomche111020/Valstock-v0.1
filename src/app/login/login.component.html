@@ -1,13 +1,34 @@
-<div style="text-align: center;">
+<div class="container log-container">
     <form [formGroup]="formData" (ngSubmit)="onClickSubmit(formData.value)" 
     class="form-signin">
-    <h2 class="form-signin-heading">Sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="text" id="username" class="form-control" 
-                formControlName="userName" placeholder="Username" autofocus required>
+        <div>
+            <p class="form-signin-main">Join our stock community!</p>
+            <p class="form-signin">Download free photos and videos powered by the best photographers.</p>
+        </div>    
+        <div class="login-form">
+            <div class="login-input">
+                <label for="inputEmail" class="sr-only">Username</label>
+                <input type="text" id="username" class="form-control" 
+                    formControlName="userName" placeholder="Enter username here..." autofocus required>
+                <label class="val" *ngIf="f['userName'].touched && f['userName'].invalid">There is something wrong!</label>
+            </div>
+            <div class="login-input">
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" 
-                formControlName="password" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    formControlName="password" placeholder="Enter password here..." required>
+                <div class="val" *ngIf="f['password'].touched && f['password'].invalid">There is something wrong!</div>
+            </div>
+        <button class="btn-black" type="submit">Sign in</button>
+        </div>        
     </form>
 </div>
+
+<footer class="login-footer">
+    <section id="one">
+        <div class="footer-background"></div>
+    </section>
+    <section id="two">
+        <img class="footer-image" src="assets/Vector.png" >
+    </section>
+        
+</footer>

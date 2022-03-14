@@ -30,4 +30,11 @@ export class ImageService {
       catchError(this.handleError)
     );
   }
+
+  public generateThumbnail(images: Image[]){
+    const imageUrl = 'https://picsum.photos/id/'
+    images.map(x => {
+      x.thumbnail_url =imageUrl + `${x.id}/${Math.floor(x.width/10)}/${Math.floor(x.height/10)}`
+    });
+  }
 }

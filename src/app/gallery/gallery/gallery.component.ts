@@ -14,25 +14,27 @@ export class GalleryComponent implements OnInit {
   public images: Image[] = [];
   public image: Image[] = [];
   public albums: string[] = [];
+  public pageSize: number = 9;
+  public page: number = 1;
 
-  constructor(private imageService: ImageService, private albumService: AlbumService) { }
+  constructor(private imageService: ImageService) { }
 
-  @ViewChild('modal', {static: false}) modal!: ModalComponent
+  @ViewChild('modal', { static: false }) modal!: ModalComponent
 
   ngOnInit(): void {
-    this.imageService.getImages(1,30).subscribe(data => {
-      if(data){
+    this.imageService.getImages(this.page, this.pageSize).subscribe(data => {
+      if (data) {
         this.images = data;
+        this.imageService.generateThumbnail(this.images);
       }
-    })
+    });
   }
 
-  imageDetails(image: Image): void {
-    console.log("image details", image);
-  }
-
-  openModal(image: Image) {
+  openModal(image: Image): void {
     this.modal.open(image);
+  }
+
+  loadMore(): void {
   }
 
 }

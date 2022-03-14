@@ -9,7 +9,7 @@
       <button class="border-white btn-black" (click)="openList()">My albums</button>
       <div class="dropdown-list" *ngIf="list">
           <ul *ngFor="let album of albums">
-            <li routerLink="gallery/album/{{album.id}}" (click)="closeList()">{{ album.name }}</li>
+            <li (click)="closeList(album.id)">{{ album.name }}</li>
           </ul>
       </div>
     </div>

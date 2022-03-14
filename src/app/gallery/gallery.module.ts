@@ -8,13 +8,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AlbumComponent } from './album/album.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
   imports: [
     CommonModule,
     GalleryRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot()
   ],
   declarations: [
     GalleryComponent,

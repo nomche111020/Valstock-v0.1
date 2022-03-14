@@ -15,14 +15,16 @@
 
 .image {
     max-width: 100%;
+    min-height: 170px;
 }
 
 .pin-album {
     display: grid;
-    grid-gap: 30px;
-    grid-template-columns: auto-fit, minmax;
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     max-width: 630px;
+    align-items: center;
 }
 
 .album-footer {
@@ -32,3 +34,36 @@
 .album-footer button{
     margin: 30px;
 }
+
+.btn-hover {
+    transition: .5s ease;
+    opacity: 0;
+    transform: translate(0%, -100%);
+    -ms-transform: translate(0%, -100%);
+    text-align: center;    
+    height: 30px;
+  }
+
+  .btn-text {
+    background-color: #EA5D4B;
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: 800;
+  }
+
+  .pin-item:hover .btn-hover {
+    opacity: 1;
+  }
+
+  .image-block{
+      display: none;
+  }
+
+  .title-date {
+    font-size: 14px !important;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+  }

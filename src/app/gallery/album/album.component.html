@@ -2,13 +2,16 @@
     <div class="album-row">
         <div class="title">
             <p>{{ album.name }}</p>
+            <p class="title-date">Date created: {{ album.date | date:'longDate' }}</p>
         </div>
         <div  class="pin-album container">
             <div *ngFor="let image of album.images" class="pin-item">
-                <img class="image" [src]="image.download_url" />
-                <!-- <div class="btn-hover">          
-                  <div class="btn-text">Remove</div>
-                </div> -->
+                <div>
+                    <img class="image" [src]="image.thumbnail_url" />
+                    <div class="btn-hover">          
+                      <div class="btn-text" (click)="removeImage(image.id)">Remove</div>
+                    </div>
+                </div>                
             </div>    
         </div>
         <div class="album-footer">

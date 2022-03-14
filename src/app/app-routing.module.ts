@@ -12,7 +12,13 @@ const routes: Routes = [
   {
     path: '',
     component: GalleryComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    component: GalleryComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

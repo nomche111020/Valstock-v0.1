@@ -2,15 +2,29 @@
 <div class="container">
     <div class="details-row" *ngIf="image">
         <div class="btn-group">
-            <button class="btn-white" (click)="openModal(image)">Add to album</button>
-            <button class="btn-black" (click)="download()">Download</button>
+            <div>
+                <button class="btn-white" (click)="openModal(image)">Add to album</button>
+            </div>
+            <div>
+                <button class="btn-black" (click)="downloadList()">Download</button>
+                <div class="dropdown-list" *ngIf="isOpen">
+                    <ul>
+                        <li (click)="download(3290,2632)">Original <br/> (2632/3290)</li>
+                        <li (click)="download(2400,1920)">Large <br/> (1920/2400)</li>
+                        <li (click)="download(1600,1280)">Medium <br/> (1280/1600)</li>
+                        <li (click)="download(800,640)">Small <br/> (640/800)</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="image">
             <img [src]="image.download_url" />
         </div>
-        <div class="image-details">
+        <section class="image-details">
+            <p class="a-title">Author</p>
+            <p class="author">{{ image.author }}</p>
             <button class="btn-white m-top30" (click)="goBack()">Go back</button>
-        </div>
+        </section>
     </div>
 </div>
 

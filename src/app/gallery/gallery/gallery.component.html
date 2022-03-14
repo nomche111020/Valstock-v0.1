@@ -1,12 +1,18 @@
-
-<div  class="pin-container container">
+<main class="container">
+<section class="pin-container">
     <div *ngFor="let image of images" class="pin-item">
-        <img routerLink="details/{{image.id}}" class="image" [src]="image.download_url" />
+        <img routerLink="details/{{image.id}}" class="image" [src]="image.thumbnail_url" />
         <div class="btn-hover">          
           <div class="btn-text" (click)="openModal(image)">Add to album</div>
         </div>
     </div>    
-</div>
+</section>
+<section>
+  <div class="load-more">
+    <button class="btn-black" (click)="loadMore()">Load more</button>
+  </div>
+</section>
+</main>
 
 <app-modal #modal></app-modal>
 

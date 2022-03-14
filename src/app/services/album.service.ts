@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Album, Image } from '../models';
+import { Album, Image, User } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -21,15 +21,15 @@ export class AlbumService {
   public getAlbumById(id: string): Album {
     const albums = this.getAlbumsFromLocalStorage()
     const album = albums.find(x => x.id === id);
-    // Ovde imat NRE ako ne postojt albumot ke padnit na ovaa linija
     return album ? album : albums[0];
   }
 
 
-  public insertImage(id: string, image: Image): void {
+  public insertImage(id: string[], image: Image): void {
     const albums = this.getAlbumsFromLocalStorage()
-    const album = albums.find(x => x.id === id);
-    album?.images.push(image);
+    const albumList = albums.filter(x => id.some(item => item === x.id));
+
+    albumList.map(x => x.images.push(image));
     this.saveAlbumsToLocalStorage(albums);
   }
 

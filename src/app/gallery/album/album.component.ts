@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Album } from 'src/app/models';
 import { AlbumService } from 'src/app/services/album.service';
+import { ImageService } from 'src/app/services/image.service';
 
 @Component({
   selector: 'app-album',
@@ -13,15 +14,20 @@ export class AlbumComponent implements OnInit {
   public id!: string;
   public album!: Album;
 
-  constructor(private route: ActivatedRoute, private albumService: AlbumService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private imageService: ImageService, private albumService: AlbumService, private router: Router) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
 
     this.album = this.albumService.getAlbumById(this.id);
+    this.imageService.generateThumbnail(this.album.images);
   }
 
-  goBack() : void {
+  removeImage(id: string): void {
+
+  }
+
+  goBack(): void {
     this.router.navigate(["gallery"]);
   }
 }

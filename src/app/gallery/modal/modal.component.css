@@ -16,5 +16,68 @@
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    max-width: 542px;
+    text-align: center;
   }
+
+  .nav-pills {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-item {
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 15px;
+    color: gray;
+  }
+
+  .active{
+    color: black;
+  }
+
+  .nav-button button {
+    margin: 15px;
+  }
+
+  .nav-item-album {
+    color: gray;
+    letter-spacing: 0.4px;
+    font-size: 20px;
+
+  }
+
+  .modal-input {
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.64;
+    font-size: 32px;
+  }
+
+
+  .modal-input::placeholder{
+    letter-spacing: 0.64px;
+    font-size: 32px;
+    color: black;
+  }
+
+  [type=checkbox]:checked ~ label {
+    color: black;
+}
+
+.checkbox{
+  opacity: 0;
+  margin: 15px;
+}
+
+.modal-input:focus::placeholder {
+  color: transparent;
+}
+  

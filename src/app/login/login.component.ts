@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
@@ -12,28 +12,30 @@ export class LoginComponent implements OnInit {
 
   public userName: string = '';
   public password: string = '';
-  public formData = new FormGroup({
-    userName: new FormControl("admin"),
-    password: new FormControl("admin"),
-  });
+  public formData!: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) {
-   }
-
-  ngOnInit(): void {
-    
+  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) {
   }
 
- 
+  ngOnInit(): void {
+    this.formData = new FormGroup({
+      userName: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required)
+    })
+  }
+
+  get f() { return this.formData.controls; }
 
   onClickSubmit(data: any) {
     this.userName = data.userName;
     this.password = data.password;
+
+    if (this.formData.invalid)
+      return;
+
     this.authService.login(this.userName, this.password)
       .subscribe(data => {
-        console.log("Login success: ", + data);
-
-        if(data) this.router.navigate(['/gallery']);
+        if (data) this.router.navigate(['/gallery']);
       });
   }
 

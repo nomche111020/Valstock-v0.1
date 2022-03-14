@@ -13,9 +13,9 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     // pathMatch: 'full',
     children: [
-      { path: '', component: GalleryComponent },
-      { path: 'details/:id', component: DetailsComponent },
-      { path: 'album/:id', component:  AlbumComponent}      
+      { path: '', component: GalleryComponent, canActivate: [AuthGuard] },
+      { path: 'details/:id', component: DetailsComponent, canActivate: [AuthGuard] },
+      { path: 'album/:id', component:  AlbumComponent, canActivate: [AuthGuard]}      
     ],
   },
 ];
