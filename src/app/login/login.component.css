@@ -85,6 +85,11 @@
     padding: 6em 0 20px 0;
 }
 
+.invalid {
+    border: 2px solid red;
+    color: red;
+  }
+
 
 
 

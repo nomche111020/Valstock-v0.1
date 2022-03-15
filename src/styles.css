@@ -9,6 +9,10 @@ body {
     font-family: "Lexend Deca";
 }
 
+figure{
+    margin: 0;
+}
+
 .container {
     margin-right: auto;
     margin-left: auto;

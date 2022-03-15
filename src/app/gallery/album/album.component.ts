@@ -13,6 +13,7 @@ export class AlbumComponent implements OnInit {
 
   public id!: string;
   public album!: Album;
+  public removeIds: string[] = [];
 
   constructor(private route: ActivatedRoute, private imageService: ImageService, private albumService: AlbumService, private router: Router) { }
 
@@ -24,7 +25,7 @@ export class AlbumComponent implements OnInit {
   }
 
   removeImage(id: string): void {
-
+    this.removeIds.push(id);
   }
 
   goBack(): void {

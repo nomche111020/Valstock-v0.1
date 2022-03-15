@@ -1,16 +1,15 @@
-<main class="container">
+<main infinite-scroll
+[infiniteScrollDistance]="distance"
+[infiniteScrollThrottle]="throttle"
+(scrolled)="onScroll()"
+ class="container">
 <section class="pin-container">
-    <div *ngFor="let image of images" class="pin-item">
+    <figure *ngFor="let image of images" class="pin-item">
         <img routerLink="details/{{image.id}}" class="image" [src]="image.thumbnail_url" />
         <div class="btn-hover">          
           <div class="btn-text" (click)="openModal(image)">Add to album</div>
         </div>
-    </div>    
-</section>
-<section>
-  <div class="load-more">
-    <button class="btn-black" (click)="loadMore()">Load more</button>
-  </div>
+      </figure>    
 </section>
 </main>
 

@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { Image } from '../../models';
-import { AlbumService } from '../../services/album.service';
 import { ImageService } from '../../services/image.service';
 
 @Component({
@@ -11,10 +10,10 @@ import { ImageService } from '../../services/image.service';
 })
 export class GalleryComponent implements OnInit {
 
+  public throttle = 0;
+  public distance = 1;
   public images: Image[] = [];
-  public image: Image[] = [];
-  public albums: string[] = [];
-  public pageSize: number = 9;
+  public pageSize: number = 12;
   public page: number = 1;
 
   constructor(private imageService: ImageService) { }
@@ -34,7 +33,11 @@ export class GalleryComponent implements OnInit {
     this.modal.open(image);
   }
 
-  loadMore(): void {
+  onScroll(): void {
+    this.imageService.getImages(++this.page, this.pageSize).subscribe(data => {
+      this.images.push(...data);
+      this.imageService.generateThumbnail(this.images);
+    });
   }
 
 }

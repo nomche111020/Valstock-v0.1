@@ -74,6 +74,7 @@ export class ModalComponent implements OnInit {
 
   insertImageToAlbum() {
     this.albumService.insertImage(this.selectedAlbumIds, this.selectedImage!);
+    this.notificationService.showSuccess('This is a success message','');
     this.close();
   }
 

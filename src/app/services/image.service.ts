@@ -12,23 +12,13 @@ export class ImageService {
 
   constructor(private http: HttpClient) { }
 
-  private handleError(error: any) {
-    console.log(error);
-    return throwError(error);
-  }
 
   public getImages(page?: number, limit?: number): Observable<Image[]>{
-    return this.http.get<Image[]>(`${this._baseUrl}/v2/list?page=${page}&limit=${limit}`).pipe(
-      tap(data => data),
-      catchError(this.handleError)
-      );
+    return this.http.get<Image[]>(`${this._baseUrl}/v2/list?page=${page}&limit=${limit}`) as Observable<Image[]>
   }
 
   public getImageById(id: string): Observable<Image>{
-    return this.http.get<Image>(`${this._baseUrl}/id/${id}/info`).pipe(
-      tap(data =>  data + `${this._baseUrl}/id/${id}/info`),
-      catchError(this.handleError)
-    );
+    return this.http.get<Image>(`${this._baseUrl}/id/${id}/info`);
   }
 
   public generateThumbnail(images: Image[]){

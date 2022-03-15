@@ -1,22 +1,19 @@
-<div class="container">
+<section class="container">
     <div class="album-row">
-        <div class="title">
+        <section class="title">
             <p>{{ album.name }}</p>
             <p class="title-date">Date created: {{ album.date | date:'longDate' }}</p>
-        </div>
-        <div  class="pin-album container">
+        </section>
+        <section  class="pin-album">
             <div *ngFor="let image of album.images" class="pin-item">
-                <div>
-                    <img class="image" [src]="image.thumbnail_url" />
-                    <div class="btn-hover">          
-                      <div class="btn-text" (click)="removeImage(image.id)">Remove</div>
-                    </div>
-                </div>                
+                <figure>
+                    <img  class="image" [src]="image.thumbnail_url" />
+                </figure>                
             </div>    
-        </div>
-        <div class="album-footer">
+        </section>
+        <section class="album-footer">
             <button class="btn-white m-top30" (click)="goBack()">Go back</button>
             <button class="btn-black m-top30">Save</button>
-        </div>
+        </section>
     </div>
-</div>
+</section>

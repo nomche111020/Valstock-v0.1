@@ -46,6 +46,7 @@ export class DetailsComponent implements OnInit {
   }
 
   download(width: number, height: number): void {
+    this.isOpen = !this.isOpen;
     const fileName = Date.now() + `-${width}-${height}-image.png`;
     const imageUrl = 'https://picsum.photos/id/';
 

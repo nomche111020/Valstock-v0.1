@@ -9,6 +9,7 @@ import { DetailsComponent } from './details/details.component';
 import { LayoutComponent } from './layout/layout.component';
 import { AlbumComponent } from './album/album.component';
 import { ToastrModule } from 'ngx-toastr';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ToastrModule } from 'ngx-toastr';
     CommonModule,
     GalleryRoutingModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    InfiniteScrollModule
   ],
   declarations: [
     GalleryComponent,

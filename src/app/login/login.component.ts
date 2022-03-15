@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   public userName: string = '';
   public password: string = '';
   public formData!: FormGroup;
+  public isAuthenticated!: boolean;
 
   constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) {
   }
@@ -30,8 +31,13 @@ export class LoginComponent implements OnInit {
     this.userName = data.userName;
     this.password = data.password;
 
-    if (this.formData.invalid)
+    if (this.formData.invalid){
+      this.isAuthenticated = false;
       return;
+    } else {
+      this.isAuthenticated = true;
+    }
+      
 
     this.authService.login(this.userName, this.password)
       .subscribe(data => {

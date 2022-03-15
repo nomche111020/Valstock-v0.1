@@ -37,6 +37,7 @@
     color: #000000;
     opacity: 1;
     font: normal normal normal 32px/40px Lexend Deca;
+    margin: 5px;
 }
 
 .a-title {
@@ -44,4 +45,5 @@
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
+    text-transform: uppercase;
 }
